@@ -1,0 +1,43 @@
+.message-block {
+    width: 100%;
+    display: inline-block;
+}
+
+.read-receipts {
+    position: relative;
+    bottom: 6px;
+}
+
+.chatFeed {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    background-color: #FFF;
+}
+
+.chatTitleContainer {
+    width: calc(100% - 36px);
+    padding: 18px;
+    text-align: center;
+}
+
+.chatTitle {
+    color: #E5D33D;
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.chatSubtitle {
+    color: #E5D33D;
+    font-weight: 600;
+    font-size: 12px;
+    padding-top: 4px;
+}
+
+.messageFormContainer {
+    position: absolute;
+    bottom: 0px;
+    width: calc(100% - 36px);
+    padding: 18px;
+    background-color: #FFF;
+}

@@ -1,3 +1,4 @@
+import styles from './ChatFeed.module.css';
 import MessageForm from "./MessageForm";
 import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
@@ -19,7 +20,7 @@ const ChatFeed = (props) => {
 
             return (
                 <div key={`msg_${index}`} style={{ width: '100%' }}>
-                    <div className="message-block">
+                    <div className={styles.message-block}>
                         {
                             isMyMessage
                                 ? <MyMessage message={message} />
@@ -27,7 +28,7 @@ const ChatFeed = (props) => {
                         }
                     </div>
                     <div
-                        className="read-receipts"
+                        className={styles.read-receipts}
                         style={
                             {
                                 marginRight: isMyMessage ? '18px' : '0px',
@@ -47,12 +48,12 @@ const ChatFeed = (props) => {
     }
 
     return (
-        <div className="chat-feed">
-            <div className="chat-title-container">
-                <div className="chat-title">
+        <div className={styles.chatFeed}>
+            <div className={styles.chatTitleContainer}>
+                <div className={styles.chatTitle}>
                     {chat?.title}
                 </div>
-                <div className="chat-subtitle">
+                <div className={chatSubtitle}>
                     {chat.people
                         .map(person => ` ${person.person.username}`)
                     }
@@ -60,7 +61,7 @@ const ChatFeed = (props) => {
             </div>
             {renderMessages()}
             <div style={{ height: '100px' }} />
-            <div className="message-form-container">
+            <div className={styles.messageFormContainer}>
                 <MessageForm {...props} chatId={activeChat} />
             </div>
         </div>
