@@ -1,9 +1,9 @@
-.message-block {
+.messageBlock {
     width: 100%;
     display: inline-block;
 }
 
-.read-receipts {
+.readReceipts {
     position: relative;
     bottom: 6px;
 }
@@ -22,13 +22,13 @@
 }
 
 .chatTitle {
-    color: #E5D33D;
+    color: #F7E342;
     font-weight: 800;
     font-size: 24px;
 }
 
 .chatSubtitle {
-    color: #E5D33D;
+    color: #F7E342;
     font-weight: 600;
     font-size: 12px;
     padding-top: 4px;

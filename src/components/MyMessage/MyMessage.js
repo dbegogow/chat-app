@@ -1,10 +1,12 @@
+import styles from './MyMessage.module.css';
+
 const MyMessage = ({ message }) => {
     if (message?.attachments?.length > 0) {
         return (
             <img
                 src={message.attachments[0].file}
                 alt="message-attachment"
-                className="message-image"
+                className={styles.messageImage}
                 style={{ float: 'right' }}
             />
         );
@@ -12,7 +14,7 @@ const MyMessage = ({ message }) => {
 
     return (
         <div
-            className="message"
+            className={styles.message}
             style={
                 {
                     float: 'right',

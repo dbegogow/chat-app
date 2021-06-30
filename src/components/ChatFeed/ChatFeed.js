@@ -1,7 +1,7 @@
 import styles from './ChatFeed.module.css';
-import MessageForm from "./MessageForm";
-import MyMessage from "./MyMessage";
-import TheirMessage from "./TheirMessage";
+import MessageForm from "../MessageForm";
+import MyMessage from "../MyMessage";
+import TheirMessage from "../TheirMessage";
 
 const ChatFeed = (props) => {
     const { chats, activeChat, userName, messages } = props;
@@ -20,7 +20,7 @@ const ChatFeed = (props) => {
 
             return (
                 <div key={`msg_${index}`} style={{ width: '100%' }}>
-                    <div className={styles.message-block}>
+                    <div className={styles.messageBlock}>
                         {
                             isMyMessage
                                 ? <MyMessage message={message} />
@@ -28,7 +28,7 @@ const ChatFeed = (props) => {
                         }
                     </div>
                     <div
-                        className={styles.read-receipts}
+                        className={styles.readReceipts}
                         style={
                             {
                                 marginRight: isMyMessage ? '18px' : '0px',
@@ -53,7 +53,7 @@ const ChatFeed = (props) => {
                 <div className={styles.chatTitle}>
                     {chat?.title}
                 </div>
-                <div className={chatSubtitle}>
+                <div className={styles.chatSubtitle}>
                     {chat.people
                         .map(person => ` ${person.person.username}`)
                     }
