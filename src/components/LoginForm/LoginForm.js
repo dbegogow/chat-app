@@ -1,9 +1,11 @@
 import { useState } from "react";
+import axios from 'axios';
 import styles from './LoginForm.module.css';
 
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,15 +17,15 @@ const LoginForm = () => {
         };
 
         try {
-            await fetch('https://api.chatengine.io/chats',
-                { headers: authObject });
+            await axios.get('https://api.chatengine.io/chats', { headers: authObject });
 
             localStorage.setItem('username', username);
             localStorage.setItem('password', password);
 
             window.location.reload();
+            setError('');
         } catch (error) {
-
+            setError('Incorect credentials.')
         }
     };
 
@@ -52,6 +54,7 @@ const LoginForm = () => {
                         <span>Start Chatting</span>
                     </button>
                 </div>
+                {error && <h2 className={styles.error}>{error}</h2>}
             </form>
         </div >
     );
