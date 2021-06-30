@@ -7,22 +7,20 @@ const TheirMessage = ({
     const isFirstMessageByUser = !lastMessage
         || lastMessage.sender.username !== message.sender.username;
 
-
-
     return (
         <div className={styles.messageRow}>
             {isFirstMessageByUser && (
                 <div
                     className={styles.messageAvatar}
-                    style={{ backgroundImage: `url(${message?.sender?.avatar})` }}
+                    style={{ backgroundImage: message.sender && `url(${message.sender.avatar})` }}
                 />
             )}
             {
-                message?.attachments?.length > 0
+                message.attachments && message.attachments.length > 0
                     ? (
                         <img
                             src={message.attachments[0].file}
-                            alt="message-attachment"
+                            alt="Message Attachment"
                             className={styles.messageImage}
                             style={{ marginLeft: isFirstMessageByUser ? '4px' : '48px' }}
                         />
